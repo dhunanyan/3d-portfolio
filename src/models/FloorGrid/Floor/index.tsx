@@ -8,10 +8,10 @@ import { ModelPropsType } from "../../types";
 
 type GLTFResult = GLTF & {
   nodes: {
-    Object_4: THREE.Mesh;
+    Plane_Stone_0: THREE.Mesh;
   };
   materials: {
-    ["Material.003"]: THREE.MeshStandardMaterial;
+    Stone: THREE.MeshStandardMaterial;
   };
 };
 
@@ -20,12 +20,11 @@ export const Floor = ({ scale, position, rotation }: ModelPropsType) => {
   const { nodes, materials } = useGLTF("models/floor.glb") as GLTFResult;
 
   return (
-    <group {...{ scale, position, rotation }} ref={floorRef}>
-      <mesh
-        geometry={nodes.Object_4.geometry}
-        material={materials["Material.003"]}
-        scale={[5, 1, 5]}
-      />
-    </group>
+    <mesh
+      ref={floorRef}
+      {...{ scale, position, rotation }}
+      geometry={nodes.Plane_Stone_0.geometry}
+      material={materials.Stone}
+    />
   );
 };
