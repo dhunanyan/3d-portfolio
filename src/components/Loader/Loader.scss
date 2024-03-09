@@ -1,0 +1,21 @@
+@import "../../utils/colors";
+
+.loader {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  &__spinner {
+    animation: spin 1s linear infinite;
+    border: 2px solid $blue02;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360);
+    }
+  }
+}

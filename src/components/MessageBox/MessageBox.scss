@@ -1,0 +1,21 @@
+@import "../../utils/colors";
+
+.message-box {
+  align-items: center;
+  background-color: $blue01;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 300px;
+  padding: 8px;
+
+  &__title {
+    margin: 0 0 5px;
+    text-align: center;
+  }
+
+  &__description {
+    text-align: center;
+  }
+}
