@@ -2,9 +2,11 @@
 
 import * as React from "react";
 import { Canvas as ThreeCanvas } from "@react-three/fiber";
-import { PerspectiveCamera, Stage } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 
 import { Desktop, WallGrid, FloorGrid } from "@/models";
+import { Buttons3D } from "@/components";
+
 import { adjustModelForScreenSize } from "./utils";
 
 import {
@@ -16,11 +18,20 @@ import {
   WALL_GRID_SCALE,
 } from "@/constants";
 
-import "./Canvas.scss";
 import { ModelVectorType } from "@/models/types";
+import "./Canvas.scss";
 
-export const Canvas = () => {
+export type CanvasPropsType = {
+  onButtonPointerEnter: (id: string) => void;
+  onButtonPointerLeave: () => void;
+};
+
+export const Canvas = ({
+  onButtonPointerEnter,
+  onButtonPointerLeave,
+}: CanvasPropsType) => {
   const cameraXOffset = 2 * Math.PI * 0.95;
+  const [stage, setStage] = React.useState<string>("home");
   const [cameraRotation, setCameraRotation] = React.useState<ModelVectorType>([
     cameraXOffset,
     0,
@@ -34,8 +45,6 @@ export const Canvas = () => {
   React.useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       const { clientX, clientY } = event;
-
-      console.log(clientY);
 
       setCameraRotation([
         cameraXOffset + (clientY - window.innerHeight / 2) * -0.00005,
@@ -51,7 +60,7 @@ export const Canvas = () => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [cameraXOffset]);
 
   return (
     <ThreeCanvas className="app__canvas">
@@ -68,6 +77,11 @@ export const Canvas = () => {
       <directionalLight position={[-3.5, 0.8, 0]} intensity={1} />
       <ambientLight intensity={0.5} />
       <hemisphereLight color="#b1e1ff" groundColor="#89b941" intensity={0.3} />
+      <Buttons3D
+        onClick={() => {}}
+        onButtonPointerEnter={onButtonPointerEnter}
+        onButtonPointerLeave={onButtonPointerLeave}
+      />
       <FloorGrid
         position={FLOOR_GRID_POSITION}
         scale={FLOOR_GRID_SCALE}
