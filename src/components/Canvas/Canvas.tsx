@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Canvas as ThreeCanvas } from "@react-three/fiber";
+import { Desktop } from "@/models/Desktop";
 
 import "./Canvas.scss";
 
@@ -12,5 +13,6 @@ export const Canvas = () => (
     <pointLight />
     <spotLight />
     <hemisphereLight />
+    <Desktop />
   </ThreeCanvas>
 );
