@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Canvas } from "@/components/Canvas/Canvas";
 import { MessageBox } from "@/components/MessageBox/MessageBox";
 import { Loader } from "@/components/Loader/Loader";
@@ -11,9 +11,9 @@ import "./page.scss";
 export default function App() {
   return (
     <div className="app">
-      <Suspense fallback={<Loader />}>
+      <React.Suspense fallback={<Loader />}>
         <Canvas />
-      </Suspense>
+      </React.Suspense>
     </div>
   );
 }
