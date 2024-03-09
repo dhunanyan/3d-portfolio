@@ -20,14 +20,14 @@ import "./Canvas.scss";
 import { ModelVectorType } from "@/models/types";
 
 export const Canvas = () => {
+  const cameraXOffset = 2 * Math.PI * 0.95;
   const [cameraRotation, setCameraRotation] = React.useState<ModelVectorType>([
-    2 * Math.PI * 0.95,
+    cameraXOffset,
     0,
     0,
   ]);
   const [cameraPosition, setCameraPosition] = React.useState<ModelVectorType>([
     0, 30, 20,
-    // 0, 30, 560,
   ]);
   const [modelScale, modelPosition, modelRotation] = adjustModelForScreenSize();
 
@@ -38,7 +38,7 @@ export const Canvas = () => {
       console.log(clientY);
 
       setCameraRotation([
-        2 * Math.PI * 0.95 + (clientY - window.innerHeight / 2) * -0.00005,
+        cameraXOffset + (clientY - window.innerHeight / 2) * -0.00005,
         (clientX - window.innerWidth / 2) * -0.00009,
         0,
       ]);
@@ -63,11 +63,11 @@ export const Canvas = () => {
         far={1000}
         zoom={1.38}
       />
-      <directionalLight position={[1, -5, 0.5]} intensity={2} />
-      <directionalLight position={[-3.5, 80, 250]} intensity={1} />
-      <directionalLight position={[-3.5, 0.8, 0]} intensity={4} />
+      <directionalLight position={[1, -5, 0.5]} intensity={6} />
+      <directionalLight position={[-3.5, 80, 250]} intensity={2.4} />
+      <directionalLight position={[-3.5, 0.8, 0]} intensity={1} />
       <ambientLight intensity={0.5} />
-      <hemisphereLight color="#b1e1ff" groundColor="#303030" intensity={1} />
+      <hemisphereLight color="#b1e1ff" groundColor="#89b941" intensity={0.3} />
       <FloorGrid
         position={FLOOR_GRID_POSITION}
         scale={FLOOR_GRID_SCALE}

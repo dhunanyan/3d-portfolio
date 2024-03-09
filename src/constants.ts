@@ -14,6 +14,6 @@ export const FLOOR_SCALE: ModelVectorType = [10, 10, 10];
 
 export const FLOOR_GRID_SCALE: ModelVectorType = [2, 2, 2];
 export const FLOOR_GRID_POSITION: ModelVectorType = [0, -60, 20];
-export const FLOOR_GRID_ROTATION: ModelVectorType = [89.8, 0, 0];
+export const FLOOR_GRID_ROTATION: ModelVectorType = [89.75, 0, 0];
 
 // -1.4 + 2 * Math.PI * 0.115
