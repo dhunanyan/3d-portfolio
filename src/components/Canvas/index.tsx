@@ -32,7 +32,7 @@ import "./Canvas.scss";
 
 export const Canvas = () => {
   const router = useRouter();
-  const [stage, setStage] = React.useState<string>("");
+  const [page, setPage] = React.useState<string>("");
   const cameraRef = React.useRef<PerspectiveCameraType>(null);
   const [isCameraBlocked, setIsCameraBlock] = React.useState<boolean>(false);
   const [target, setTarget] = React.useState<{
@@ -89,12 +89,12 @@ export const Canvas = () => {
       Math.abs(newZoom - targetZoom) < 1.6;
 
     if (isAnimationFinished) {
-      router.push(`/${stage}`);
+      router.push(`/${page}`);
     }
   });
 
   const onButton3DClick = (id: string) => {
-    setStage(id);
+    setPage(id);
     setIsCameraBlock(true);
     setTarget({
       position: CAMERA_POSITION_TO_MONITOR,
