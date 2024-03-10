@@ -42,7 +42,7 @@ export const STICK_SCALE: ModelVectorType = [0.07, 2.5, 0.07];
 export const HIDDEN_STICK_SCALE: ModelVectorType = [0.03, 0, 0.07];
 export const HIDDEN_STICK_POSITION: ModelVectorType = [0.07, 0, 0.07];
 
-export const MESSAGE_BOX_COLOR = "#548CDB";
+export const MESSAGE_BOX_COLOR = "#357FE9";
 export const MESSAGE_BOX_TEXT_COLOR = "#181919";
 export const MESSAGE_BOX_POSITION: ModelVectorType = [0, 3.12, 0];
 export const HIDDEN_MESSAGE_BOX_SCALE: ModelVectorType = [0, 0.45 * 13, 0];

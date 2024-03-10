@@ -7,7 +7,7 @@ import { PerspectiveCamera as PerspectiveCameraType } from "three";
 import { PerspectiveCamera } from "@react-three/drei";
 
 import { Desktop, WallGrid, FloorGrid } from "@/models";
-import { Buttons3D } from "@/components";
+import { Buttons3D } from "./Buttons3D";
 
 import { adjustModelForScreenSize } from "./utils";
 
