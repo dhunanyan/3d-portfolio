@@ -2,23 +2,19 @@ import { ModelVectorType } from "./models/types";
 
 export const CAMERA_ZOOM: number = 1.38;
 export const CAMERA_POSITION: ModelVectorType = [0, 30, 20];
-export const CAMERA_ROTATION_OFFSET: ModelVectorType = [
-  2 * Math.PI * 0.95,
-  0,
-  0,
-];
+export const CAMERA_ROTATION_OFFSET: ModelVectorType = [-0.3, 0, 0];
 export const CAMERA_ROTATION: ModelVectorType = [
   CAMERA_ROTATION_OFFSET[0],
   CAMERA_ROTATION_OFFSET[1],
   CAMERA_ROTATION_OFFSET[2],
 ];
 export const CAMERA_ROTATION_TO_MONITOR: ModelVectorType = [
-  -0.15,
+  -0.19,
   CAMERA_ROTATION_OFFSET[1],
   CAMERA_ROTATION_OFFSET[2],
 ];
-export const CAMERA_POSITION_TO_MONITOR: ModelVectorType = [0, 40, 20];
-export const CAMERA_ZOOM_TO_MONITOR: number = 3;
+export const CAMERA_POSITION_TO_MONITOR: ModelVectorType = [0, 25, 20];
+export const CAMERA_ZOOM_TO_MONITOR: number = 8;
 
 export const ROTATION: ModelVectorType = [0, 0, 0];
 

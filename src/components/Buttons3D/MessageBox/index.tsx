@@ -46,7 +46,6 @@ export const MessageBox = ({
         onPointerOut={onPointerOut}
       >
         <Text
-          // onPointerEnter={}
           position={[0, 1.5, 0.5]}
           fontSize={0.5}
           color="#bad6fe"

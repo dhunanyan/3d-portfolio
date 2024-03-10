@@ -6,7 +6,7 @@ type MessageBoxDataType = {
   };
 };
 export const MESSAGE_BOX_DATA: MessageBoxDataType = {
-  home: {
+  "career-path": {
     title: "Career Path",
     description: "Take a look at me journey",
     button: "Read more",

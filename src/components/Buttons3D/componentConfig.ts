@@ -7,7 +7,7 @@ export type ButtonDataType = {
 
 export const BUTTONS: ButtonDataType[] = [
   {
-    id: "home",
+    id: "career-path",
     position: [10.8, 0, -35.6],
   },
   {

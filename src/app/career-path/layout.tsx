@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "dhunanyan - Home",
+  title: "dhunanyan - Career Path",
   description:
-    "Explore the intersection of passion and proficiency as [Your Name] presents a journey through projects, educational endeavors, and career milestones. Dive into a world where creativity meets expertise, and where each project is a testament to a commitment to excellence.",
-  keywords: "Portfolio, Software Engineer, Creative Professional, Expertise",
+    "Navigate through my professional journey, milestones, and aspirations. Join me as I continue to grow and contribute in the ever-evolving world of technology.",
+  keywords: "Career Path, Professional Journey, Milestones, Aspirations",
   authors: [{ name: "dhunanyan" }],
 };
 
-export default function RootLayout({
+export default function CareerPathLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
