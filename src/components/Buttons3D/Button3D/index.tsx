@@ -1,6 +1,11 @@
 "use client";
 
 import * as React from "react";
+import { useFrame } from "@react-three/fiber";
+import { RoundedBox } from "@react-three/drei";
+
+import { MessageBox } from "../MessageBox";
+import { Arrow } from "../Arrow";
 
 import {
   BOX_COLOR,
@@ -14,10 +19,8 @@ import {
   ARROW_POSITION,
   ARROW_MOVEMENT_RANGE,
 } from "@/constants";
+
 import { ModelVectorType } from "@/models/types";
-import { MessageBox } from "../MessageBox";
-import { useFrame } from "@react-three/fiber";
-import { Arrow } from "../Arrow";
 
 export type Button3DPropsType = {
   id: string;
@@ -60,21 +63,26 @@ export const Button3D = ({
 
   useFrame(() => {
     const arrowSpeed = 0.02;
-    const stickAnimationSpeed = 0.06;
-    const messageBoxAnimationSpeed = 0.15;
-    const textAnimationSpeed = 0.05;
+    const arrowMovement = arrowUp ? arrowSpeed : -arrowSpeed;
 
-    const targetStickPosition: ModelVectorType = shouldShowMessageBox
-      ? [position[0], position[1] + 1.4, position[2]]
-      : position;
+    const stickAnimationSpeed = 0.06;
     const targetStickScale: ModelVectorType = shouldShowMessageBox
       ? STICK_SCALE
       : HIDDEN_STICK_SCALE;
+    const targetStickPosition: ModelVectorType = shouldShowMessageBox
+      ? [position[0], position[1] + 1.4, position[2]]
+      : position;
+    const messageBoxAnimationSpeed = 0.15;
+
     const targetMessageBoxScale: ModelVectorType = shouldShowMessageBox
       ? MESSAGE_BOX_SCALE
       : HIDDEN_MESSAGE_BOX_SCALE;
+
     const targetTextOpacity: number = shouldShowMessageBox ? 1 : 0;
-    const arrowMovement = arrowUp ? arrowSpeed : -arrowSpeed;
+    const textAnimationSpeed =
+      targetTextOpacity === 1 && targetTextOpacity / 4 > textOpacity
+        ? 0.01
+        : 0.05;
 
     setStickScale((prevScale) =>
       updateValue(prevScale, targetStickScale, stickAnimationSpeed)
@@ -107,7 +115,7 @@ export const Button3D = ({
 
     if (shouldShowMessageBox) {
       setMessageBoxId("");
-      onButton3DClick();
+      setTextOpacity(0);
       return;
     }
 
@@ -123,11 +131,7 @@ export const Button3D = ({
   };
 
   return (
-    <group
-      onClick={onClick}
-      onPointerOver={onPointerOver}
-      onPointerOut={onPointerOut}
-    >
+    <group>
       <group position={stickPosition}>
         <Arrow
           position={arrowPosition}
@@ -138,19 +142,29 @@ export const Button3D = ({
           <boxGeometry args={stickScale} />
           <meshStandardMaterial color={BOX_COLOR} />
         </mesh>
-        <mesh position={MESSAGE_BOX_POSITION}>
-          <boxGeometry args={messageBoxScale} />
-          <meshStandardMaterial color={BOX_COLOR} />
-        </mesh>
+        <group position={MESSAGE_BOX_POSITION} scale={messageBoxScale}>
+          <RoundedBox position={[0, 0, 0]} args={[1, 1, 1]} radius={0.01}>
+            <meshStandardMaterial color={BOX_COLOR} />
+          </RoundedBox>
+        </group>
+
         <MessageBox
           messageBoxId={messageBoxId}
           showMessage={shouldShowMessageBox}
           opacity={textOpacity}
+          onButton3DClick={onButton3DClick}
+          onPointerOver={onPointerOver}
+          onPointerOut={onPointerOut}
         />
       </group>
-
-      <mesh position={position}>
-        <boxGeometry args={[BOX_SCALE * 1, BOX_SCALE * 1, BOX_SCALE * 1]} />
+      <RoundedBox
+        position={position}
+        args={[BOX_SCALE * 1, BOX_SCALE * 1, BOX_SCALE * 1]}
+        radius={0.1}
+        onClick={onClick}
+        onPointerOver={onPointerOver}
+        onPointerOut={onPointerOut}
+      >
         <meshStandardMaterial color={BOX_COLOR} />
         <pointLight
           color="#bad6fe"
@@ -159,7 +173,7 @@ export const Button3D = ({
           decay={2.5}
           position={[0, 1, -1]}
         />
-      </mesh>
+      </RoundedBox>
     </group>
   );
 };

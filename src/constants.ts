@@ -45,7 +45,7 @@ export const HIDDEN_STICK_POSITION: ModelVectorType = [0.07, 0, 0.07];
 
 export const MESSAGE_BOX_POSITION: ModelVectorType = [0, 3.12, 0];
 export const HIDDEN_MESSAGE_BOX_SCALE: ModelVectorType = [0, 0.45 * 13, 0];
-export const MESSAGE_BOX_SCALE: ModelVectorType = [0.45 * 30, 0.45 * 13, 0.15];
+export const MESSAGE_BOX_SCALE: ModelVectorType = [0.45 * 30, 0.45 * 13, 0.33];
 
 export const ARROW_POSITION: ModelVectorType = [0, 1.2, 0];
 export const ARROW_MOVEMENT_RANGE = [1.2, 0.6];

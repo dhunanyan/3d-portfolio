@@ -16,7 +16,7 @@ export const Arrow = ({
   thickness = 0.4,
 }: ArrowPropsType) => {
   return (
-    <group position={position} scale={scale}>
+    <group position={position} scale={scale} rotation={[50, 0, 0]}>
       <mesh rotation={[0, 0, 0.5]} position={[-0.55, 0, 0]}>
         <boxGeometry args={[thickness, 2.5, thickness]} />
         <meshStandardMaterial color={color} />
