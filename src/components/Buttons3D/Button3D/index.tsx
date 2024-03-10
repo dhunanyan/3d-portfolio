@@ -4,7 +4,7 @@ import * as React from "react";
 import { useFrame } from "@react-three/fiber";
 import { RoundedBox } from "@react-three/drei";
 
-import { MessageBox } from "../MessageBox";
+import { MessageBoxContent } from "../MessageBoxContent";
 import { Arrow } from "../Arrow";
 
 import {
@@ -18,6 +18,8 @@ import {
   HIDDEN_STICK_POSITION,
   ARROW_POSITION,
   ARROW_MOVEMENT_RANGE,
+  ARROW_COLOR,
+  MESSAGE_BOX_COLOR,
 } from "@/constants";
 
 import { ModelVectorType } from "@/models/types";
@@ -133,7 +135,7 @@ export const Button3D = ({
       <group position={stickPosition}>
         <Arrow
           position={arrowPosition}
-          color="#bad6fe"
+          color={ARROW_COLOR}
           scale={[0.15, 0.15, 0.15]}
         />
         <mesh>
@@ -142,11 +144,11 @@ export const Button3D = ({
         </mesh>
         <group position={MESSAGE_BOX_POSITION} scale={messageBoxScale}>
           <RoundedBox position={[0, 0, 0]} args={[1, 1, 1]} radius={0.01}>
-            <meshStandardMaterial color={BOX_COLOR} />
+            <meshStandardMaterial color={MESSAGE_BOX_COLOR} />
           </RoundedBox>
         </group>
 
-        <MessageBox
+        <MessageBoxContent
           messageBoxId={messageBoxId}
           showMessage={shouldShowMessageBox}
           opacity={textOpacity}

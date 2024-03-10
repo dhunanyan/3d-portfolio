@@ -33,15 +33,21 @@ export const FLOOR_GRID_POSITION: ModelVectorType = [0, -60, 20];
 export const FLOOR_GRID_ROTATION: ModelVectorType = [89.75, 0, 0];
 
 export const BOX_SCALE = 0.45;
-export const BOX_COLOR = "#2977E7";
+export const BOX_COLOR = "#2977e7";
+
+export const BUTTON_COLOR = "#292929";
+export const BUTTON_TEXT_COLOR = "#bad6fe";
 
 export const STICK_SCALE: ModelVectorType = [0.07, 2.5, 0.07];
 export const HIDDEN_STICK_SCALE: ModelVectorType = [0.03, 0, 0.07];
 export const HIDDEN_STICK_POSITION: ModelVectorType = [0.07, 0, 0.07];
 
+export const MESSAGE_BOX_COLOR = "#548CDB";
+export const MESSAGE_BOX_TEXT_COLOR = "#181919";
 export const MESSAGE_BOX_POSITION: ModelVectorType = [0, 3.12, 0];
 export const HIDDEN_MESSAGE_BOX_SCALE: ModelVectorType = [0, 0.45 * 13, 0];
 export const MESSAGE_BOX_SCALE: ModelVectorType = [0.45 * 30, 0.45 * 13, 0.33];
 
+export const ARROW_COLOR = "#bad6fe";
 export const ARROW_POSITION: ModelVectorType = [0, 1.2, 0];
 export const ARROW_MOVEMENT_RANGE = [1.2, 0.6];
