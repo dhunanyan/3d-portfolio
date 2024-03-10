@@ -1,25 +1,24 @@
 import * as React from "react";
 
-import { Button3D } from "./Button3D/Button3D";
+import { Button3D } from "./Button3D";
 import { BUTTONS } from "./componentConfig";
 
 export type Buttons3DPropsType = {
-  onClick: (id: string) => void;
-  onButtonPointerEnter: (id: string) => void;
-  onButtonPointerLeave: () => void;
+  onButton3DClick: (id: string) => void;
 };
 
-export const Buttons3D = ({
-  onClick,
-  onButtonPointerEnter,
-  onButtonPointerLeave,
-}: Buttons3DPropsType) =>
-  BUTTONS.map((button) => (
+export const Buttons3D = ({ onButton3DClick }: Buttons3DPropsType) => {
+  const [messageBoxId, setMessageBoxId] = React.useState<string>("");
+
+  return BUTTONS.map((button) => (
     <Button3D
       key={button.id}
-      onButtonPointerEnter={() => onButtonPointerEnter(button.id)}
-      onButtonPointerLeave={onButtonPointerLeave}
+      id={button.id}
+      messageBoxId={messageBoxId}
       position={button.position}
-      onClick={() => onClick(button.id)}
+      onButton3DClick={() => onButton3DClick(button.id)}
+      setMessageBoxId={setMessageBoxId}
+      shouldShowMessageBox={button.id === messageBoxId}
     />
   ));
+};
