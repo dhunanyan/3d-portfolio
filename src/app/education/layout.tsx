@@ -17,12 +17,5 @@ export default function EducationLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <head>
-        <link rel="icon" type="image/png" href="/favicon.jfif" />
-      </head>
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+  return children;
 }

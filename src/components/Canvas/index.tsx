@@ -93,22 +93,9 @@ export const Canvas = () => {
     }
   });
 
-  const onButton3DClick = (id: string) => {
-    setPage(id);
-    setIsCameraBlock(true);
-    setTarget({
-      position: CAMERA_POSITION_TO_MONITOR,
-      rotation: CAMERA_ROTATION_TO_MONITOR,
-      zoom: CAMERA_ZOOM_TO_MONITOR,
-    });
-  };
-
   React.useEffect(() => {
-    const camera = cameraRef.current as PerspectiveCameraType;
-    if (isCameraBlocked) {
-      return;
-    }
     const handleMouseMove = (event: MouseEvent) => {
+      const camera = cameraRef.current as PerspectiveCameraType;
       const { clientX, clientY } = event;
 
       camera.rotation.set(
@@ -119,7 +106,7 @@ export const Canvas = () => {
       );
     };
 
-    if (typeof window !== "undefined") {
+    if (!isCameraBlocked) {
       window.addEventListener("mousemove", handleMouseMove);
     }
 
@@ -127,6 +114,16 @@ export const Canvas = () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [isCameraBlocked]);
+
+  const onButton3DClick = (id: string) => {
+    setIsCameraBlock(true);
+    setPage(id);
+    setTarget({
+      position: CAMERA_POSITION_TO_MONITOR,
+      rotation: CAMERA_ROTATION_TO_MONITOR,
+      zoom: CAMERA_ZOOM_TO_MONITOR,
+    });
+  };
 
   return (
     <>

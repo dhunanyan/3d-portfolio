@@ -111,8 +111,6 @@ export const Button3D = ({
   });
 
   const onClick = () => {
-    document.body.style.cursor = "pointer";
-
     if (shouldShowMessageBox) {
       setMessageBoxId("");
       setTextOpacity(0);
