@@ -37,11 +37,7 @@ import { ModelVectorType } from "@/models/types";
 
 import "./Canvas.scss";
 
-export type CanvasPropsType = {
-  blur: () => void;
-};
-
-export const Canvas = ({ blur }: CanvasPropsType) => {
+export const Canvas = () => {
   const router = useRouter();
   const [page, setPage] = React.useState<string>("");
   const cameraRef = React.useRef<THREE.PerspectiveCamera>(null);
@@ -134,7 +130,6 @@ export const Canvas = ({ blur }: CanvasPropsType) => {
       rotation: CAMERA_ROTATION_TO_MONITOR,
       zoom: CAMERA_ZOOM_TO_MONITOR,
     });
-    blur();
   };
 
   return (

@@ -1,6 +1,6 @@
 import { ModelVectorType } from "./models/types";
 
-export const CAMERA_ZOOM: number = 1.38;
+export const CAMERA_ZOOM: number = 1.4;
 export const CAMERA_POSITION: ModelVectorType = [0, 30, 20];
 export const CAMERA_ROTATION_OFFSET: ModelVectorType = [-0.3, 0, 0];
 export const CAMERA_ROTATION: ModelVectorType = [

@@ -9,10 +9,6 @@ import "./View.scss";
 
 export const View = () => {
   const rendererRef = React.useRef<WebGLRenderer | null>(null);
-  const [isBlur, setIsBlur] = React.useState<boolean>(false);
-  const blur = () => {
-    setIsBlur(true);
-  };
 
   React.useEffect(() => {
     return () => {
@@ -20,12 +16,12 @@ export const View = () => {
         rendererRef.current.dispose();
       }
     };
-  }, []);
+  }, [rendererRef]);
 
   return (
-    <div className={`view${isBlur ? " view--blur" : ""}`}>
+    <div className="view">
       <ThreeCanvas onCreated={(state) => (rendererRef.current = state.gl)}>
-        <Canvas blur={blur} />
+        <Canvas />
       </ThreeCanvas>
     </div>
   );

@@ -6,6 +6,9 @@
   &--blur {
     filter: blur(0px);
 
+    animation: blurAnimation 2000ms ease-out;
+    animation-fill-mode: forwards;
+
     @keyframes blurAnimation {
       0% {
         filter: blur(0px);
@@ -20,7 +23,5 @@
         filter: blur(20px);
       }
     }
-
-    animation: blurAnimation 2000ms ease-out; // Adjust the duration as needed
   }
 }
