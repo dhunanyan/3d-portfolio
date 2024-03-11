@@ -2,4 +2,25 @@
   height: 100%;
   position: relative;
   width: 100%;
+
+  &--blur {
+    filter: blur(0px);
+
+    @keyframes blurAnimation {
+      0% {
+        filter: blur(0px);
+      }
+      25% {
+        filter: blur(0px);
+      }
+      35% {
+        filter: blur(17px);
+      }
+      100% {
+        filter: blur(20px);
+      }
+    }
+
+    animation: blurAnimation 2000ms ease-out; // Adjust the duration as needed
+  }
 }

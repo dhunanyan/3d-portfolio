@@ -1,13 +1,13 @@
 import * as React from "react";
-import { RoundedBox } from "@react-three/drei";
+import { RoundedBox, Text } from "@react-three/drei";
 
-import { Text } from "@react-three/drei";
-import { MESSAGE_BOX_DATA } from "./componentConfig";
 import {
   BUTTON_COLOR,
   BUTTON_TEXT_COLOR,
+  FONT_URL,
   MESSAGE_BOX_TEXT_COLOR,
 } from "@/constants";
+import { MESSAGE_BOX_DATA } from "./componentConfig";
 
 export type MessageBoxPropsType = {
   messageBoxId: string;
@@ -16,6 +16,7 @@ export type MessageBoxPropsType = {
   onButton3DClick: () => void;
   onPointerOver: () => void;
   onPointerOut: () => void;
+  fontUrl?: string;
 };
 
 export const MessageBoxContent = ({
@@ -25,10 +26,12 @@ export const MessageBoxContent = ({
   onButton3DClick,
   onPointerOver,
   onPointerOut,
+  fontUrl = FONT_URL,
 }: MessageBoxPropsType) => (
   <group>
     <Text
       position={[0, 4.9, 0.5]}
+      font={fontUrl}
       fontSize={1}
       fontWeight={600}
       color={MESSAGE_BOX_TEXT_COLOR}
@@ -38,6 +41,7 @@ export const MessageBoxContent = ({
     </Text>
     <Text
       position={[0, 3.7, 0.5]}
+      font={fontUrl}
       fontSize={0.5}
       color={MESSAGE_BOX_TEXT_COLOR}
       fillOpacity={opacity}
@@ -52,6 +56,7 @@ export const MessageBoxContent = ({
       >
         <Text
           position={[0, 1.5, 0.5]}
+          font={fontUrl}
           fontSize={0.5}
           color={BUTTON_TEXT_COLOR}
           fillOpacity={opacity}
@@ -67,12 +72,5 @@ export const MessageBoxContent = ({
         </RoundedBox>
       </group>
     )}
-
-    {/* <mesh
-      position={[0, 1.3, 0.045]}
-    >
-      <boxGeometry args={[3, 1.5, 0.07]} />
-      <meshStandardMaterial color={"#181919"} opacity={opacity} />
-    </mesh> */}
   </group>
 );

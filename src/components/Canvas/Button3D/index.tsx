@@ -21,7 +21,6 @@ import {
   ARROW_COLOR,
   MESSAGE_BOX_COLOR,
 } from "@/constants";
-
 import { ModelVectorType } from "@/models/types";
 
 export type Button3DPropsType = {

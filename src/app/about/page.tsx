@@ -1,6 +1,4 @@
-import React from "react";
-import { Loader } from "@/components";
-import { View } from "@/components";
+import * as React from "react";
 
 import "./page.scss";
 

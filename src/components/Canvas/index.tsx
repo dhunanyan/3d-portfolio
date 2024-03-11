@@ -1,12 +1,15 @@
 "use client";
 
 import * as React from "react";
+import * as THREE from "three";
 import { useRouter } from "next/navigation";
 import { useFrame } from "@react-three/fiber";
-import { PerspectiveCamera as PerspectiveCameraType } from "three";
 import { PerspectiveCamera } from "@react-three/drei";
 
-import { Desktop, WallGrid, FloorGrid } from "@/models";
+import { Desktop, MacWallpaper } from "@/models";
+
+import { FloorGrid } from "./FloorGrid";
+import { WallGrid } from "./WallGrid";
 import { Buttons3D } from "./Buttons3D";
 
 import { adjustModelForScreenSize } from "./utils";
@@ -22,18 +25,26 @@ import {
   FLOOR_GRID_POSITION,
   FLOOR_GRID_ROTATION,
   FLOOR_GRID_SCALE,
+  MAC_WALLPAPER_POSITION,
+  MAC_WALLPAPER_ROTATION,
+  MAC_WALLPAPER_SCALE,
   WALL_GRID_POSITION,
   WALL_GRID_ROTATION,
   WALL_GRID_SCALE,
 } from "@/constants";
 
 import { ModelVectorType } from "@/models/types";
+
 import "./Canvas.scss";
 
-export const Canvas = () => {
+export type CanvasPropsType = {
+  blur: () => void;
+};
+
+export const Canvas = ({ blur }: CanvasPropsType) => {
   const router = useRouter();
   const [page, setPage] = React.useState<string>("");
-  const cameraRef = React.useRef<PerspectiveCameraType>(null);
+  const cameraRef = React.useRef<THREE.PerspectiveCamera>(null);
   const [isCameraBlocked, setIsCameraBlock] = React.useState<boolean>(false);
   const [target, setTarget] = React.useState<{
     position: ModelVectorType;
@@ -54,7 +65,7 @@ export const Canvas = () => {
       return;
     }
 
-    const camera = cameraRef.current as PerspectiveCameraType;
+    const camera = cameraRef.current as THREE.PerspectiveCamera;
     const { position, rotation, zoom } = camera;
 
     const [pX, pY, pZ] = target.position;
@@ -95,7 +106,7 @@ export const Canvas = () => {
 
   React.useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      const camera = cameraRef.current as PerspectiveCameraType;
+      const camera = cameraRef.current as THREE.PerspectiveCamera;
       const { clientX, clientY } = event;
 
       camera.rotation.set(
@@ -123,18 +134,19 @@ export const Canvas = () => {
       rotation: CAMERA_ROTATION_TO_MONITOR,
       zoom: CAMERA_ZOOM_TO_MONITOR,
     });
+    blur();
   };
 
   return (
     <>
       <PerspectiveCamera
-        ref={cameraRef}
         makeDefault
+        ref={cameraRef}
         position={CAMERA_POSITION}
         rotation={CAMERA_ROTATION}
-        near={0.2}
-        far={1000}
         zoom={CAMERA_ZOOM}
+        far={1000}
+        near={0.2}
       />
       <directionalLight position={[1, -5, 0.5]} intensity={6} />
       <directionalLight position={[-3.5, 80, 250]} intensity={2.4} />
@@ -156,6 +168,11 @@ export const Canvas = () => {
         position={modelPosition}
         scale={modelScale}
         rotation={modelRotation}
+      />
+      <MacWallpaper
+        scale={MAC_WALLPAPER_POSITION}
+        position={MAC_WALLPAPER_ROTATION}
+        rotation={MAC_WALLPAPER_SCALE}
       />
     </>
   );

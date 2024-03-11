@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { Button3D } from "../Button3D";
 import { BUTTONS } from "./componentConfig";
 

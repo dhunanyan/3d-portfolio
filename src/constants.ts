@@ -51,3 +51,9 @@ export const MESSAGE_BOX_SCALE: ModelVectorType = [0.45 * 30, 0.45 * 13, 0.33];
 export const ARROW_COLOR = "#bad6fe";
 export const ARROW_POSITION: ModelVectorType = [0, 1.2, 0];
 export const ARROW_MOVEMENT_RANGE = [1.2, 0.6];
+
+export const MAC_WALLPAPER_POSITION: ModelVectorType = [1, 1, 1];
+export const MAC_WALLPAPER_ROTATION: ModelVectorType = [0, 14.1, -45];
+export const MAC_WALLPAPER_SCALE: ModelVectorType = [-0.155, 0, 0];
+
+export const FONT_URL = "/fonts/Thorce.ttf";

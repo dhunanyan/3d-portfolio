@@ -1,0 +1,55 @@
+html,
+body,
+.projects {
+  height: 100%;
+}
+
+.landing-page {
+  animation: overflowAnimation 1500ms ease-out;
+  overflow: auto;
+  height: 100%;
+
+  @keyframes overflowAnimation {
+    0% {
+      overflow: hidden;
+    }
+    25% {
+      overflow: hidden;
+    }
+    35% {
+      overflow: hidden;
+    }
+    99% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: auto;
+    }
+  }
+
+  &__wallpaper {
+    animation: blurAnimation 1500ms ease-out;
+    background-image: url("/images/background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+
+    &--blur {
+      filter: blur(0px);
+      transform: scale(1) translate(0, 0);
+
+      @keyframes blurAnimation {
+        0% {
+          filter: blur(20px);
+          overflow: hidden;
+          transform: scale(1.33) translate(0, 100px);
+        }
+        100% {
+          filter: blur(0px);
+          transform: scale(1) translate(0, 0);
+        }
+      }
+    }
+  }
+}

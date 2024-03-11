@@ -1,9 +1,9 @@
-import React from "react";
-import { Loader } from "@/components";
-import { View } from "@/components";
+import * as React from "react";
+
+import LandingPage from "@/components/LandingPage";
 
 import "./page.scss";
 
 export default function Projects() {
-  return <div className="projects">HOMEPAGE</div>;
+  return <LandingPage />;
 }
