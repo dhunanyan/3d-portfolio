@@ -1,3 +1,3 @@
 export { Canvas } from "./Canvas";
-export { Loader } from "./Loader";
+export { LoaderPage } from "./LoaderPage";
 export { View } from "./View";

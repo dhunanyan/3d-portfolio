@@ -3,6 +3,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
 
+body,
+html,
+.layout {
+  background-color: #4d00c8;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,7 +16,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1a1d21;
 }
 
 code {
@@ -146,32 +151,6 @@ h6 {
   font-weight: 400;
   margin: 0;
   padding: 0;
-}
-
-/* width */
-::-webkit-scrollbar {
-  background: #292929;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #827e78;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #292929;
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb :hover {
-  background: #383838;
-}
-
-::-webkit-scrollbar-corner {
-  background: #4c89e4;
 }
 
 input[type="file"] {

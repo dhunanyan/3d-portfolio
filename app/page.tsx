@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Loader } from "@/components";
+import { LoaderPage } from "@/components";
 import { View } from "@/components";
 
 import "./page.scss";
@@ -8,7 +8,7 @@ import "./page.scss";
 export default function App() {
   return (
     <div className="app">
-      <React.Suspense fallback={<Loader />}>
+      <React.Suspense fallback={<LoaderPage />}>
         <View />
       </React.Suspense>
     </div>
