@@ -2,13 +2,22 @@ import * as React from "react";
 
 import "./Window.scss";
 
+export type WindowIDsType =
+  | "not-found"
+  | "about"
+  | "career-path"
+  | "contact"
+  | "education"
+  | "projects";
+
 export type WindowPropsType = {
+  id: WindowIDsType;
   title: string;
   children?: React.ReactNode;
 };
 
-export const Window = ({ children, title }: WindowPropsType) => (
-  <div className="window">
+export const Window = ({ title, id, children }: WindowPropsType) => (
+  <div className={`window window--${id}`}>
     <div className="window__container">
       <div className="window__top">
         <div className="window__buttons">

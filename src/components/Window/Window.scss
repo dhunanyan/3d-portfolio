@@ -10,6 +10,7 @@
   border: 1px solid rgba(40, 42, 54, 0.58);
   height: 100%;
   opacity: 0;
+  overflow: hidden;
   transition: opacity 0.5s ease-out;
   width: 100%;
   z-index: 1;
@@ -130,6 +131,12 @@
 
     &::-webkit-scrollbar-corner {
       background: #4c89e4;
+    }
+  }
+
+  &--not-found .window {
+    &__bottom {
+      background-color: #ddd;
     }
   }
 }

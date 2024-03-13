@@ -7,7 +7,7 @@ export default function CareerPathPage() {
   return (
     <div className="career-path">
       <Mac>
-        <Window title="career-path" />
+        <Window id="career-path" title="My career path" />
       </Mac>
     </div>
   );

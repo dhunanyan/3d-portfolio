@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <div className="about">
       <Mac>
-        <Window title="about" />
+        <Window id="about" title="About me" />
       </Mac>
     </div>
   );

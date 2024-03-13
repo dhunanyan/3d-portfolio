@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <div className="contact">
       <Mac>
-        <Window title="contact" />
+        <Window id="contact" title="Contact" />
       </Mac>
     </div>
   );

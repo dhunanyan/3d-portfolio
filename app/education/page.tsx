@@ -7,7 +7,7 @@ export default function EducationPage() {
   return (
     <div className="education">
       <Mac>
-        <Window title="education" />
+        <Window id="education" title="Education" />
       </Mac>
     </div>
   );

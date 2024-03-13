@@ -6,7 +6,7 @@ import "./page.scss";
 export default function ProjectsPage() {
   return (
     <Mac>
-      <Window title="projects" />
+      <Window id="projects" title="projects" />
     </Mac>
   );
 }
