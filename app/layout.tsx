@@ -22,9 +22,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/png" href="/favicon.jfif" />
       </head>
-      <body style={{ backgroundColor: "red" }} className={inter.className}>
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

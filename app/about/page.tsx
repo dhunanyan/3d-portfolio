@@ -1,7 +1,14 @@
 import * as React from "react";
+import { Mac, Window } from "@/components";
 
 import "./page.scss";
 
-export default function About() {
-  return <div className="About">ABOUT</div>;
+export default function AboutPage() {
+  return (
+    <div className="about">
+      <Mac>
+        <Window title="about" />
+      </Mac>
+    </div>
+  );
 }

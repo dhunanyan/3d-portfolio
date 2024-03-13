@@ -1,9 +1,12 @@
 import * as React from "react";
-
-import { LandingPage } from "@/components/LandingPage";
+import { Mac, Window } from "@/components";
 
 import "./page.scss";
 
-export default function Projects() {
-  return <LandingPage />;
+export default function ProjectsPage() {
+  return (
+    <Mac>
+      <Window title="projects" />
+    </Mac>
+  );
 }

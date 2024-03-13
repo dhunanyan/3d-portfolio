@@ -15,7 +15,7 @@ export const BUTTONS: ButtonDataType[] = [
     position: [0, 0, -40],
   },
   {
-    id: "studies",
+    id: "education",
     position: [17.5, 6, -43.5],
   },
   {

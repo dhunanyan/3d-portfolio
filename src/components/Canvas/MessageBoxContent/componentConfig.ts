@@ -28,7 +28,7 @@ export const MESSAGE_BOX_DATA: MessageBoxDataType = {
       "\n     Feel free to contact me at any time.\n I'll respond as soon as I fix all the bugs :D",
     button: "Read more",
   },
-  studies: {
+  education: {
     title: "Education",
     description:
       "\n      'Computer Science and Intelligent Systems'\nDon't forget to, take a look ay my course of Studies",
