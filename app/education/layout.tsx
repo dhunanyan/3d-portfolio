@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "dhunanyan - Education",
+  title: "dhunanyan - education",
   description:
     "Explore my educational background and the continuous pursuit of knowledge that fuels my professional growth. Education is a lifelong journey, and I'm dedicated to it.",
   keywords:

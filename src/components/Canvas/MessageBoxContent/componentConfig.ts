@@ -31,7 +31,7 @@ export const MESSAGE_BOX_DATA: MessageBoxDataType = {
   education: {
     title: "Education",
     description:
-      "\n      'Computer Science and Intelligent Systems'\nDon't forget to, take a look ay my course of Studies",
+      "\n'Computer Science and Intelligent Systems'\n          Take a look ay my course of Studies",
     button: "Read more",
   },
 };
