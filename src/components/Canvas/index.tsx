@@ -95,7 +95,7 @@ export const Canvas = () => {
 
   return (
     <>
-      <PerspectiveCamera
+      {/* <PerspectiveCamera
         makeDefault
         ref={cameraRef}
         position={CAMERA_POSITION}
@@ -103,12 +103,12 @@ export const Canvas = () => {
         zoom={CAMERA_ZOOM}
         far={1000}
         near={0.2}
-      />
-      <directionalLight position={[1, -5, 0.5]} intensity={6} />
+      /> */}
+      {/* <directionalLight position={[1, -5, 0.5]} intensity={6} /> */}
       <directionalLight position={[-3.5, 80, 250]} intensity={2.4} />
-      <directionalLight position={[-3.5, 0.8, 0]} intensity={1} />
-      <ambientLight intensity={0.5} />
-      <hemisphereLight color="#b1e1ff" groundColor="#89b941" intensity={0.3} />
+      {/* <directionalLight position={[-3.5, 0.8, 0]} intensity={1} /> */}
+      <ambientLight intensity={1} />
+      {/* <hemisphereLight color="#b1e1ff" groundColor="#89b941" intensity={0.3} /> */}
       <Buttons3D onButton3DClick={onButton3DClick} />
     </>
   );

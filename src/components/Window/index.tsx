@@ -17,7 +17,7 @@ export type WindowPropsType = {
   id: WindowIDsType;
   title: string;
   children?: React.ReactNode;
-  resize: () => void;
+  resize?: () => void;
 };
 
 export const Window = ({ title, id, children, resize }: WindowPropsType) => {
