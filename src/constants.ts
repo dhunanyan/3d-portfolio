@@ -18,20 +18,6 @@ export const CAMERA_ZOOM_TO_MONITOR: number = 8;
 
 export const ROTATION: ModelVectorType = [0, 0, 0];
 
-export const WALL_ROTATION: ModelVectorType = [0, 0, 0];
-export const WALL_SCALE: ModelVectorType = [10, 10, 10];
-
-export const WALL_GRID_POSITION: ModelVectorType = [0, 120, 20];
-export const WALL_GRID_SCALE: ModelVectorType = [2, 2, 2];
-export const WALL_GRID_ROTATION: ModelVectorType = [0, 0, 0];
-
-export const FLOOR_ROTATION: ModelVectorType = [0, 0, 0];
-export const FLOOR_SCALE: ModelVectorType = [10, 10, 10];
-
-export const FLOOR_GRID_SCALE: ModelVectorType = [2, 2, 2];
-export const FLOOR_GRID_POSITION: ModelVectorType = [0, -60, 20];
-export const FLOOR_GRID_ROTATION: ModelVectorType = [89.75, 0, 0];
-
 export const BOX_SCALE = 0.45;
 export const BOX_COLOR = "#2977e7";
 
@@ -51,10 +37,6 @@ export const MESSAGE_BOX_SCALE: ModelVectorType = [0.45 * 30, 0.45 * 13, 0.33];
 export const ARROW_COLOR = "#bad6fe";
 export const ARROW_POSITION: ModelVectorType = [0, 1.2, 0];
 export const ARROW_MOVEMENT_RANGE = [1.2, 0.6];
-
-export const MAC_WALLPAPER_POSITION: ModelVectorType = [1, 1, 1];
-export const MAC_WALLPAPER_ROTATION: ModelVectorType = [0, 14.1, -45];
-export const MAC_WALLPAPER_SCALE: ModelVectorType = [-0.155, 0, 0];
 
 export const FONT_URL = "/fonts/Thorce.ttf";
 
