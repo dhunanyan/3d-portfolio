@@ -25,13 +25,13 @@ Clone the repository and install dependencies:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/3d-portfolio-website.git
+git clone https://github.com/your-username/3d-portfolio.git
 
 # Navigate to the project directory
-cd 3d-portfolio-website
+cd 3d-portfolio
 
 # Install dependencies
-npm install
+yarn install
 ```
 
 ## Configuration
